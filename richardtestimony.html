@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap-5.2.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./todominirevf.css">
+    <title>Document</title>
+</head>
+<body onload="displayTodo()"> 
+      <div class="neck ">
+    <input type="text" id="userInput"><br><br>
+    <div class="button d-flex gap-4" >
+    <button onclick="addTodo()"> <img src="./images (3).jpeg" alt="" style="width: 30px;"></button>
+    <button onclick="deleteAllTodo()"><img src="./images.jpeg" alt="" style="width: 20px;"> </button>
+    <button onclick="deleteATodo()"><img src="./delete 1.png" alt="" style="width: 20px;"></button>
+    <button onclick="deleteByName()"><img src="./images (2).png" alt="" width="20px"></button>
+    <button onclick="editTodo()"> <img src="./download.png" alt="" style="width: 30px;"> </button>
+ </div>
+ 
+    <div id="display">
+       
+    </div>
+    <table id="myTable">
+        <th>S/N<th>
+          <th>Todo</th>
+            <th>ACTIONS</th>
+
+    </table>
+
+    <script>
+       var allTodo = []
+       function addTodo(){
+        myTable.innerHTML=""
+        if(userInput.value == ""){
+            alert("input something")
+        } else{
+        allTodo.push(userInput.value)
+        userInput.value = ""
+        console.log(allTodo)
+        display.innerHTML+=`<h1>${allTodo}</h1>`
+        displayTodo()
+        }
+       }
+       function deleteAllTodo(){
+        display
+        .innerHTML=""
+        var userResponse= confirm("Are you 100% sure you want to delete this? if yes you would not be able to recover")
+        if (userResponse == true){
+            allTodo.splice(0)
+        console.log(allTodo)
+        display.innerHTML+=`<h1>${allTodo}</h1>`
+        } else {
+            alert("your list is safe")
+        }
+        displayTodo()
+        
+
+       }
+       function deleteATodo(){   
+        myTable.innerHTML=""                                                                                                                    
+        allTodo.splice(userResponse,1)
+        console.log(allTodo)
+        displayTodo()
+       }
+       function deleteByName(){
+        myTable.innerHTML=""
+        var name = prompt("What todo do you want to delete")
+        var userIndex=allTodo.indexOf(name)
+        console.log(userIndex)
+        allTodo.splice(userIndex,1)
+        console.log(allTodo)
+        displayTodo()
+       }
+       function editTodo(){
+            myTable.innerHTML = ""
+            var index=prompt("what to do do you want to edit")
+            var index2 =prompt("What do you want to replace it with?")
+           allTodo.splice(index,1,index2)
+        displayTodo()
+        }
+        function displayTodo(){
+            myTable.innerHTML += ""
+            for(var index = 0; index < allTodo.length;index++){
+          myTable.innerHTML +=`
+         <td> <button class="btn btn-danger my-2" onclick="deleteTodo()">Delete todo </button>
+          <button class="btn btn-warning my-2" onclick="editodo()">Edit todo </button>`
+        }
+    }
+    function deleteTodo(userIndex){
+        allTodo.splice(userIndex,1)
+        console.log(allTodo)
+        displayTodo()
+    //   alert(userIndex    )
+    }
+    function editodo(index,indexx){
+            var index=prompt("what do you want to edit")
+            var indexx =prompt("What do you want to replace it with?")
+           allTodo.splice(index,1,indexx)
+        displayTodo()
+    }
+   
+    
+    </script>
+</body>
+</html>                                                                                                                                                                                         

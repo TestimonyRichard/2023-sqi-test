@@ -1,0 +1,44 @@
+.neck{
+    height: 50vh;
+    width: 100vh;
+    box-shadow: 3px 2px 2px 2px black;
+    /* right: 200px; */
+    /* left: 200px; */
+    margin-left: 350px;
+    margin-top: 90px;
+    background-image: url(./images\ \(8\).jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20pt;
+
+}
+.button{
+    width: 50px;
+    height: 40px;
+    border-radius: 15pt;
+    margin-left: 150px;
+
+    /* box-shadow: 2px 2px 2px 2px black; */
+     
+}
+input{
+    width: 90vh;
+    height: 50px;
+    border-radius: 15vh;
+    text-align: center;
+    color: goldenrod ;
+    margin-left: 25px;
+}
+body{
+    background-color: gold;
+    
+}
+
+ button{
+    border-radius: 10px;
+    
+ }
+ h1{
+    color:tomato;
+ }
